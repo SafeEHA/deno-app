@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deno-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deno-app
+  template:
+    metadata:
+      labels:
+        app: deno-app
+    spec:
+      containers:
+      - name: deno-container
+        image: safeeha/deno-app:latest
+        ports:
+        - containerPort: 8000

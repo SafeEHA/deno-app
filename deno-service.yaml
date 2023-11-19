@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deno-service
+spec:
+  selector:
+    app: deno-app
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
